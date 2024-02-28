@@ -1,0 +1,68 @@
+---
+title: "Shortest Paths in Genshin Impact"
+author: "Kelly Ng"
+date: "2024-02-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+Packages needed for this project: 
+```{r}
+library(tidyverse)
+library(tidygraph)
+library(igraph)
+library(ggraph)
+```
+
+Data from section 1 (Mondstat): 
+```{r}
+vertex1 <- data.frame(x = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"))
+data1 <- data.frame(x1 = c("a", "a", "c", "c", "c", "f", "b", "b", "d", "d", "e", "l", "e", "g", "h", "k", "h", "i", "i"),
+                    x2 = c("b", "c", "b", "f", "d", "d", "d", "l", "l", "e", "l", "k", "g", "h", "k", "j", "j", "j", "g"),
+                    time = c(15.78, 21.96, 17.66, 15.46, 20.2, 7.61, 15.71, 8.07, 14.41, 9.14, 17.06, 2.39, 5.96, 4.9, 15.62, 13.63, 3.86, 3.06, 3.59))
+data1
+g1 <- graph_from_data_frame(data1, directed = FALSE, vertices = vertex1)
+```
+
+Shortest-path analysis: 
+```{r}
+shortest_paths(g1, "a")
+shortest_paths(g1, "a")$vpath[[9]]
+```
+
+Data from section 2 (Springvale):
+```{r}
+vertex2 <- data.frame(x = c("a", "b", "c", "d", "e", "f", "g", "h"))
+data2 <- data.frame(x1 = c("a", "a", "b", "b", "c", "c", "d", "d", "e", "e", "e", "f", "g"), 
+                    x2 = c("b", "f", "c", "e", "d", "e", "e", "h", "f", "g", "h", "g", "h"), 
+                    time = c(8.4, 10.58, 7.09, 8, 10.22, 10.68, 10.7, 8.96, 6.47, 4.85, 5.89, 4.36, 4.5))
+data2
+g2 <- graph_from_data_frame(data2, directed = FALSE, vertices = vertex2)
+```
+
+Shortest-path analysis: 
+```{r}
+shortest_paths(g2, "a")
+shortest_paths(g2, "a")$vpath[[4]]
+shortest_paths(g2, "a")$vpath[[8]]
+```
+
+Data from section 3 (Dawn Winery):
+```{r}
+vertex3 <- data.frame(x = c("a", "b", "c", "d"))
+data3 <- data.frame(x1 = c("a", "b", "c", "d"), 
+                x2 = c("b", "c", "d", "b"), 
+                time = c(31.66, 11.02, 6.02, 15.8))
+data3
+g3 <- graph_from_data_frame(data3, directed = FALSE, vertices = vertex3)
+```
+
+Shortest-path analysis: 
+```{r}
+shortest_paths(g3, "a", weights = NULL)
+shortest_paths(g3, "a", weights = NULL)$vpath[[3]]
+shortest_paths(g3, "a", weights = NULL)$vpath[[4]]
+```
