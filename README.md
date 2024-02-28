@@ -21,5 +21,50 @@ For this project, the following assumptions will be used:
 A large part of this project will be spent on collecting the data by playing the game and running from location to location and measuring the time it takes to get from one place to another. Additionally, the same character will be used throughout the entire data collection process. The first step to collecting the data is to find all the locations that have the required material. This will be done by referring to the game’s official website for their interactive map (https://act.hoyolab.com/ys/app/interactive-map/index.html?lang=en-us#/map/2?shown_types=39&center=2008.50,-1084.00&zoom=-3.00). 
 
 <p align="center">
-  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/default_map.png" width 600>
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/default_map.png" width=600>
+</p>
+
+The above is a photo of the part of the map that includes all the locations that have the “Philanemo Mushroom”. They are split into three regions, the middle is “Mondstat”, the middle bottom is “Springvale” and the bottom left is “Dawn Winery”. Three shortest paths will be calculated, one for each region. This is because you can teleport from anywhere on the map, therefore, once the materials have been collected from one region, I will just teleport to the next region. The teleport points are represented through the blue icons, shown below: 
+
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/tp_point.png" width=300>
+</p>
+
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/statue_point.png" width=300>
+</p>
+
+Close-up screenshots were taken for each of the three regions and annotated to have the material locations as nodes and edges connecting them. The edges are placed in paths that are most easy to run through and most natural path for a player to take because it may have an already cut-out path on the ground to run on. Nodes are not placed at every individual point where the “Philanemo Mushroom” is, instead, they are placed at a building or a windmill where the mushrooms are grown on. This is because, once you reach a building for example, you can collect a few mushrooms from that building and won’t need to travel to another point that is far.
+
+**Mondstat**
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/mondstat.png" width=600>
+</p>
+
+**Springvale**
+
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/springvale.png" width=600>
+</p>
+
+**Dawn Winery*
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/mondstat_shortestpath.png" width=600>
+</p>
+
+I measured the time it took to run from one node to another node using a stopwatch and always using the “running” option in-game (instead of the “walking” option). I have recorded the times on the images above on the edges, with the time being recorded in seconds. It’s also important to note that measurements such as distance won’t be taken into account because there are many cliffs, mountains, and trees that you have to traverse in-game, therefore, the distance may not be a good measure to show how far the nodes are from each other. Instead, time would be better because we are trying to find the shortest and fastest path to collect the materials, which is solely dependent on the time it takes to run from one point to another, including getting through the obstacles in-game. 
+
+## Analysis from Results
+**Mondstat:**
+After importing the data for the region Mondstat into R, I used the command “shortest_paths” under the R package “igraph” to find the shortest paths. The algorithm used is Dijkstra’s algorithm on default because the command “shortest_paths” works so that it automatically uses Dijkstra’s algorithm when all the edges have a positive weight. 
+
+The results are shown in the image on the below. Since the aim of this project is to collect materials, the most useful paths are the paths with the most nodes, which in this region is: “a -> b -> d -> e -> g -> i”. 
+
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/mondstat_analysis.png" height=600>
+</p>
+
+This shortest path is shown below through the highlighted blue path: 
+<p align="center">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/mondstat_shortestpath.png" width=600>
 </p>
