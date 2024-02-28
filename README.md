@@ -27,7 +27,7 @@ A large part of this project will be spent on collecting the data by playing the
 The above is a photo of the part of the map that includes all the locations that have the “Philanemo Mushroom”. They are split into three regions, the middle is “Mondstat”, the middle bottom is “Springvale” and the bottom left is “Dawn Winery”. Three shortest paths will be calculated, one for each region. This is because you can teleport from anywhere on the map, therefore, once the materials have been collected from one region, I will just teleport to the next region. The teleport points are represented through the blue icons, shown below: 
 
 <p align="middle">
-  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/tp_point.png" width=100 />
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/tp_point.png" width=90 />
   <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/statue_point.png" width=100 />
 </p>
 
