@@ -52,6 +52,8 @@ Close-up screenshots were taken for each of the three regions and annotated to h
 I measured the time it took to run from one node to another node using a stopwatch and always using the “running” option in-game (instead of the “walking” option). I have recorded the times on the images above on the edges, with the time being recorded in seconds. It’s also important to note that measurements such as distance won’t be taken into account because there are many cliffs, mountains, and trees that you have to traverse in-game, therefore, the distance may not be a good measure to show how far the nodes are from each other. Instead, time would be better because we are trying to find the shortest and fastest path to collect the materials, which is solely dependent on the time it takes to run from one point to another, including getting through the obstacles in-game. 
 
 ## Analysis from Results
+For easy access to shortestpath_analysis.html, click on this link: https://kellyngsf.github.io/shortpath_genshin/shortestpath_analysis.html.
+
 ### Mondstat:
 After importing the data for the region Mondstat into R, I used the command “shortest_paths” under the R package “igraph” to find the shortest paths. The algorithm used is Dijkstra’s algorithm on default because the command “shortest_paths” works so that it automatically uses Dijkstra’s algorithm when all the edges have a positive weight. 
 
