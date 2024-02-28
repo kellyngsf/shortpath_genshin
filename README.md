@@ -97,7 +97,7 @@ The 2 shortest paths are shown below in two different colours. If you calculate 
 Hence, the shortest paths with the most nodes from the R analysis are shown in the table below.
 
 <p align="center">
-  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/final_table_shortestpaths.png" width=450>
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/final_table_shortestpaths.png" width=600>
 </p>
 
 ## Limitations and Evaluation
