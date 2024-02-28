@@ -5,5 +5,5 @@ Genshin Impact is an action RPG game designed by a Chinese game developed called
 
 This project will focus on the level-up materials for the character Klee, who requires one type of material that can be collected in the environment and two other material types that are obtained through defeating enemies. Since this project is focused on collecting materials, I will only focus on the material called “Philanemo Mushroom”. 
 <p align="center">
-  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/character_focus.png" width="150">
+  <img src="https://github.com/kellyngsf/shortpath_genshin/blob/main/images/character_focus.png" width="600">
 </p>
